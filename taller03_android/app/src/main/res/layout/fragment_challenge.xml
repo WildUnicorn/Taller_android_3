@@ -1,0 +1,84 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.chaos.taller03_android.ChallengeFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/txtIngreseASD"
+            android:layout_width="342dp"
+            android:layout_height="43dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Ingrese a ASD"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ListView
+            android:id="@+id/ListHistorial"
+            android:layout_width="360dp"
+            android:layout_height="168dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtIngreseASD" />
+
+        <TextView
+            android:id="@+id/txtAciertos"
+            android:layout_width="179dp"
+            android:layout_height="170dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="90sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ListHistorial" />
+
+        <TextView
+            android:id="@+id/txtFallos"
+            android:layout_width="168dp"
+            android:layout_height="168dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="12dp"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="@color/colorAccent"
+            android:textSize="90sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ListHistorial" />
+
+        <Button
+            android:id="@+id/btnReset"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="291dp"
+            android:layout_height="62dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="60dp"
+            android:text="Reset"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtAciertos"
+            app:layout_constraintVertical_bias="1.0" />
+    </android.support.constraint.ConstraintLayout>
+</FrameLayout>
