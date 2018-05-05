@@ -3,6 +3,7 @@ package com.example.chaos.taller03_android;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class NavegadorActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -79,17 +81,30 @@ public class NavegadorActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        FragmentManager fm = getSupportFragmentManager();
+        if (id == R.id.nav_Jugar) {
+            ChallengeFragment f = new ChallengeFragment();
+            Toast toast1 =
+                    Toast.makeText(getApplicationContext(),
+                            "Toast por defecto", Toast.LENGTH_SHORT);
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+            toast1.show();
+            fm.beginTransaction().replace(R.id.contenido, f).commit();
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_cambiarPalabra) {
+            CambiarPalabraFragment cp= new CambiarPalabraFragment();
+            fm.beginTransaction().replace(R.id.contenido, cp).commit();
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_cambiarTiempo) {
+            CambiarTiempoFragment ct= new CambiarTiempoFragment();
+            fm.beginTransaction().replace(R.id.contenido, ct).commit();
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_tablaDeTiempos) {
+            TablaTiemposFragment tt= new TablaTiemposFragment();
+            fm.beginTransaction().replace(R.id.contenido, tt).commit();
 
+        } else if (id == R.id.nav_autores) {
+                //Futuro
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
