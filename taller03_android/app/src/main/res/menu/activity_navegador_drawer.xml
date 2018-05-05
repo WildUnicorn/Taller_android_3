@@ -5,21 +5,21 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/nav_Jugar"
             android:checkable="false"
-            android:enabled="false"
+            android:enabled="true"
             android:icon="@drawable/ic_menu_camera"
             android:title="Jugar" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_cambiarPalabra"
             android:icon="@drawable/ic_menu_gallery"
             android:title="Cambiar palabra" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_cambiarTiempo"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Cambiar segundos" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_tablaDeTiempos"
             android:icon="@drawable/ic_menu_manage"
             android:title="Tabla Tiempos" />
     </group>
@@ -27,7 +27,7 @@
     <item android:title="Acerca de ">
         <menu>
             <item
-                android:id="@+id/nav_share"
+                android:id="@+id/nav_autores"
                 android:icon="@drawable/ic_menu_share"
                 android:title="Autores" />
         </menu>

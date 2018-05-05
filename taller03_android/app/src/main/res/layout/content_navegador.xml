@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.chaos.taller03_android.NavegadorActivity"
-    tools:showIn="@layout/app_bar_navegador">
+    tools:showIn="@layout/app_bar_navegador"
+    android:id="@+id/contenido">
+
 
 </android.support.constraint.ConstraintLayout>
