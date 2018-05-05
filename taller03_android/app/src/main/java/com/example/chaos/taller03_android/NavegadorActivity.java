@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 public class NavegadorActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+        Palabra p;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,7 @@ public class NavegadorActivity extends AppCompatActivity
         setContentView(R.layout.activity_navegador);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        p= new Palabra("asd");
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

@@ -7,6 +7,7 @@ package com.example.chaos.taller03_android;
 public class Palabra {
     private String palabra;
 
+
     public Palabra(String palabra) {
         this.palabra = palabra;
     }
