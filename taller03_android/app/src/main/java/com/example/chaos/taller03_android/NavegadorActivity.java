@@ -15,6 +15,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.chaos.taller03_android.model.Palabra;
+
 public class NavegadorActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
         Palabra p;

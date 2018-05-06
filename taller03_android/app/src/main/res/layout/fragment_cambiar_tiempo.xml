@@ -16,11 +16,11 @@
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="308dp"
             android:layout_height="49dp"
-            android:layout_marginTop="44dp"
+            android:layout_marginTop="12dp"
             android:text="Cambiar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtCambiarTiempo" />
+            app:layout_constraintTop_toBottomOf="@+id/divider" />
 
         <EditText
             android:id="@+id/txtCambiarTiempo"
@@ -28,13 +28,40 @@
             android:layout_height="47dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="20dp"
             android:ems="10"
+            android:hint="Ej: 180"
             android:inputType="number"
-            android:text=" (Seg)"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintHorizontal_bias="0.506"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/lblCambiarTiempoDetalle" />
+
+        <TextView
+            android:id="@+id/lblCambiarTiempoDetalle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:text="TextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.291"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Ingrese el nuevo tiempo en segundos:" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="368dp"
+            android:layout_height="1dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="40dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtCambiarTiempo" />
     </android.support.constraint.ConstraintLayout>
 </FrameLayout>

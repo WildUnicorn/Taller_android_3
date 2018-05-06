@@ -1,4 +1,4 @@
-package com.example.chaos.taller03_android;
+package com.example.chaos.taller03_android.model;
 
 /**
  * Created by Darklook64 on 03-05-2018.
