@@ -88,11 +88,7 @@ public class NavegadorActivity extends AppCompatActivity
         FragmentManager fm = getSupportFragmentManager();
         if (id == R.id.nav_Jugar) {
             ChallengeFragment f = new ChallengeFragment();
-            Toast toast1 =
-                    Toast.makeText(getApplicationContext(),
-                            "Toast por defecto", Toast.LENGTH_SHORT);
 
-            toast1.show();
             fm.beginTransaction().replace(R.id.contenido, f).commit();
 
         } else if (id == R.id.nav_cambiarPalabra) {
