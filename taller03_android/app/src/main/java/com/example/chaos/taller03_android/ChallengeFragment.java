@@ -58,6 +58,8 @@ public class ChallengeFragment extends Fragment {
             }
         };
 
+        tiempo.start();
+
         txtInserteASD.setOnClickListener(new View.OnClickListener() {
 
 
