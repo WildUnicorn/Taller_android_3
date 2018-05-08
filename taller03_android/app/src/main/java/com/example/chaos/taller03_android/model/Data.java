@@ -5,7 +5,7 @@ public class Data {
     private Palabra palabra;
 
     public Data() {
-        this.tiempo = 5;
+        this.tiempo = 5*1000;
         this.palabra= new Palabra("asd");
     }
 

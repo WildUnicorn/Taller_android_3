@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -15,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.os.CountDownTimer;
 
 import com.example.chaos.taller03_android.model.Data;
 
@@ -28,6 +30,7 @@ public class ChallengeFragment extends Fragment {
     private Data d;
     private int contadorBien;
     private int contadorMal;
+    private  CountDownTimer tiempo;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -39,6 +42,21 @@ public class ChallengeFragment extends Fragment {
         d= new Data();
         contadorBien=0;
         contadorBien=0;
+
+        tiempo= new CountDownTimer(d.getTiempo(),1000) {
+            @Override
+            public void onTick(long l) {
+                Log.v("Tiempo: ",l / 1000 + "s");
+
+            }
+
+            @Override
+            public void onFinish() {
+                txtInserteASD.setEnabled(false);
+                Toast.makeText(getView().getContext(), "Tiempo!", Toast.LENGTH_LONG).show();
+
+            }
+        };
 
         txtInserteASD.setOnClickListener(new View.OnClickListener() {
 
