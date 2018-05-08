@@ -22,4 +22,9 @@ public class Palabra {
     public void setPalabra(String palabra) {
         this.palabra = palabra;
     }
+
+    @Override
+    public String toString() {
+        return palabra;
+    }
 }
