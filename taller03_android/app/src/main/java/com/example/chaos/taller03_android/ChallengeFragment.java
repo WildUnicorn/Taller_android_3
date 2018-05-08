@@ -19,6 +19,7 @@ import android.widget.Toast;
 import android.os.CountDownTimer;
 
 import com.example.chaos.taller03_android.model.Data;
+import com.example.chaos.taller03_android.model.Palabra;
 
 import org.w3c.dom.Text;
 
@@ -26,27 +27,32 @@ public class ChallengeFragment extends Fragment {
     private EditText txtInserteASD;
     private TextView txtBien;
     private TextView txtMal;
-    private TextWatcher text= null;
+    private TextWatcher text = null;
     private Data d;
+    private Palabra p;
     private int contadorBien;
     private int contadorMal;
-    private  CountDownTimer tiempo;
+    private String palabra;
+    private CountDownTimer tiempo;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_challenge, container, false);
-        txtInserteASD= (EditText) view.findViewById(R.id.txtIngreseASD);
-        txtBien= (TextView) view.findViewById(R.id.txtAciertos);
-        txtMal= (TextView) view.findViewById(R.id.txtFallos);
-        d= new Data();
-        contadorBien=0;
-        contadorBien=0;
+        txtInserteASD = (EditText) view.findViewById(R.id.txtIngreseASD);
+        txtBien = (TextView) view.findViewById(R.id.txtAciertos);
+        txtMal = (TextView) view.findViewById(R.id.txtFallos);
+        d = new Data();
+        p = new Palabra();
+        p = d.getPalabra();
+        palabra = p.getPalabra();
+        contadorBien = 0;
+        contadorBien = 0;
 
-        tiempo= new CountDownTimer(d.getTiempo(),1000) {
+        tiempo = new CountDownTimer(d.getTiempo(), 1000) {
             @Override
             public void onTick(long l) {
-                Log.v("Tiempo: ",l / 1000 + "s");
+                Log.v("Tiempo: ", l / 1000 + "s");
 
             }
 
@@ -65,7 +71,7 @@ public class ChallengeFragment extends Fragment {
 
             @Override
             public void onClick(View view) {
-                text= new TextWatcher() {
+                text = new TextWatcher() {
                     @Override
                     public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -75,18 +81,16 @@ public class ChallengeFragment extends Fragment {
                     public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
 
-
-
-                        if (txtInserteASD.length()>=d.getPalabra().getPalabra().length()){
-                            if (txtInserteASD.getText().toString().equals( d.getPalabra().getPalabra().toLowerCase())){
-                                Toast.makeText(getView().getContext(), "Bien: "+d.getPalabra().getPalabra().toLowerCase(), Toast.LENGTH_LONG).show();
+                        if (txtInserteASD.length() >= palabra.length()) {
+                            if (txtInserteASD.getText().toString().equalsIgnoreCase(palabra)) {
+                                Toast.makeText(getView().getContext(), "Bien: " + palabra.toLowerCase(), Toast.LENGTH_LONG).show();
                                 contadorBien++;
                                 txtBien.setText(String.valueOf(contadorBien));
 
-                            }else {
+                            } else {
                                 contadorMal++;
                                 txtMal.setText(String.valueOf(contadorMal));
-                                Toast.makeText(getView().getContext(), "Mal: "+d.getPalabra().getPalabra().toLowerCase(), Toast.LENGTH_LONG).show();
+                                Toast.makeText(getView().getContext(), "Mal: " + palabra.toLowerCase(), Toast.LENGTH_LONG).show();
                             }
                             txtInserteASD.setText("");
 
@@ -105,8 +109,6 @@ public class ChallengeFragment extends Fragment {
         return view;
 
     }
-
-
 
 
 }
