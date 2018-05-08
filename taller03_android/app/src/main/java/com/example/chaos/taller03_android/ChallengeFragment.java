@@ -43,9 +43,9 @@ public class ChallengeFragment extends Fragment {
         txtBien = (TextView) view.findViewById(R.id.txtAciertos);
         txtMal = (TextView) view.findViewById(R.id.txtFallos);
         d = new Data();
-        p = new Palabra();
-        p = d.getPalabra();
-        palabra = p.getPalabra();
+
+        cargarPalabra();
+        
         contadorBien = 0;
         contadorBien = 0;
 
@@ -107,6 +107,15 @@ public class ChallengeFragment extends Fragment {
             }
         });
         return view;
+
+    }
+
+    public void cargarPalabra() {
+        // Instanciar nuevo objeto Palabra.
+        p = d.getPalabra();
+
+        // Cargar palabra string con el Objeto palabra.
+        palabra = p.getPalabra();
 
     }
 
