@@ -8,19 +8,19 @@
             android:id="@+id/nav_Jugar"
             android:checkable="false"
             android:enabled="true"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/jugar"
             android:title="Jugar" />
         <item
             android:id="@+id/nav_cambiarPalabra"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Cambiar palabra" />
+            android:icon="@drawable/reloj"
+            android:title="Cambiar Palabra" />
         <item
             android:id="@+id/nav_cambiarTiempo"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/reloj"
             android:title="Cambiar segundos" />
         <item
             android:id="@+id/nav_tablaDeTiempos"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/estadisticas"
             android:title="Tabla Tiempos" />
     </group>
 
@@ -28,7 +28,7 @@
         <menu>
             <item
                 android:id="@+id/nav_autores"
-                android:icon="@drawable/ic_menu_share"
+                android:icon="@drawable/autores"
                 android:title="Autores" />
         </menu>
     </item>

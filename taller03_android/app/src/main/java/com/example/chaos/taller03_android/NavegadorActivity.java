@@ -25,6 +25,7 @@ public class NavegadorActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navegador);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         p= new Palabra("asd");
@@ -45,6 +46,7 @@ public class NavegadorActivity extends AppCompatActivity
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setItemIconTintList(null);
         navigationView.setNavigationItemSelectedListener(this);
     }
 
@@ -104,7 +106,8 @@ public class NavegadorActivity extends AppCompatActivity
             fm.beginTransaction().replace(R.id.contenido, tt).commit();
 
         } else if (id == R.id.nav_autores) {
-                //Futuro
+            AutoresFragment autores= new AutoresFragment();
+            fm.beginTransaction().replace(R.id.contenido, autores).commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
