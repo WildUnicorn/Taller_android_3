@@ -4,15 +4,20 @@ import android.content.Intent;
 
 import com.example.chaos.taller03_android.ChallengeFragment;
 
+import java.util.List;
+
 public class Data {
-    private int tiempo;
-    private Palabra palabra;
+    public static int tiempo = 5*1000;
+    private static Palabra palabra;
+    public static String frase = "asd";
+    public static List<String> listaTiempo;
+
 
 
     public Data() {
-        this.tiempo = 5*1000;
 
         this.palabra= new Palabra("asd");
+
 
     }
 
@@ -21,6 +26,7 @@ public class Data {
     }
 
     public void setPalabra(Palabra palabra) {
+        frase=palabra.getPalabra();
         this.palabra = palabra;
     }
 

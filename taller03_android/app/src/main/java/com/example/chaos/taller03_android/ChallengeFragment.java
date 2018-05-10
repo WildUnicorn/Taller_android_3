@@ -45,6 +45,7 @@ public class ChallengeFragment extends Fragment {
     private String palabra;
     private CountDownTimer tiempo;
     private List<String> listado;
+    private List<String> listaDeTiempo;
     private int contadorIntentos;
 
 
@@ -58,19 +59,22 @@ public class ChallengeFragment extends Fragment {
         Button btnReset = (Button) view.findViewById(R.id.btnReset);
         lista= (ListView)view.findViewById(R.id.listHistorial);
         d = new Data();
+        if (d.frase == null){
+            d.frase="asd";
+        }
         listado= new ArrayList<>();
-
+        Log.v( "Frase: ",d.frase );
         btnReset.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
             }
         } );
         cargarPalabra();
-        contadorIntentos=0;
+        contadorIntentos=1;
         contadorBien = 0;
         contadorBien = 0;
 
-        tiempo = new CountDownTimer(d.getTiempo(), 1000) {
+        tiempo = new CountDownTimer(d.tiempo, 1000) {
             @Override
             public void onTick(long l) {
                 Log.v("Tiempo: ", l / 1000 + "s");
@@ -80,8 +84,9 @@ public class ChallengeFragment extends Fragment {
             @Override
             public void onFinish() {
                 txtInserteASD.setEnabled(false);
-                Toast.makeText(getView().getContext(), "Tiempo!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getView().getContext(), "Tiempo!: ", Toast.LENGTH_LONG).show();
                 tiempo.cancel();
+
 
             }
         };
@@ -103,7 +108,7 @@ public class ChallengeFragment extends Fragment {
 
                         if (txtInserteASD.length() >= palabra.length()) {
                             if (txtInserteASD.getText().toString().equalsIgnoreCase(palabra)) {
-                                Toast.makeText(getView().getContext(), "Bien: " + palabra.toLowerCase(), Toast.LENGTH_LONG).show();
+
                                 contadorBien++;
                                 ingresarPalabra(txtInserteASD.getText().toString());
                                 contadorIntentos++;
@@ -114,7 +119,7 @@ public class ChallengeFragment extends Fragment {
                                 contadorIntentos++;
                                 ingresarPalabra("Mal: "+txtInserteASD.getText().toString());
                                 txtMal.setText(String.valueOf(contadorMal));
-                                Toast.makeText(getView().getContext(), "Mal: " + palabra.toLowerCase(), Toast.LENGTH_LONG).show();
+
                             }
                             ArrayAdapter<String> adaptador;
 
@@ -142,12 +147,11 @@ public class ChallengeFragment extends Fragment {
     }
 
     public void cargarPalabra() {
-        // Instanciar nuevo objeto Palabra.
-        p = d.getPalabra();
+        palabra = d.frase;
+    }
 
-        // Cargar palabra string con el Objeto palabra.
-        palabra = p.getPalabra();
-
+    public void agregarTiempos(String palabra,String tiempo){
+        d.listaTiempo.add(palabra+" -- "+tiempo);
     }
 
     public void ingresarPalabra(String palabra) {

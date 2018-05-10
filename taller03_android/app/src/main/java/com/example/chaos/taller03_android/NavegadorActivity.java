@@ -31,21 +31,12 @@ public class NavegadorActivity extends AppCompatActivity
 
         FragmentManager fg = getSupportFragmentManager();
         ChallengeFragment cf = new ChallengeFragment();
-        fg.beginTransaction().replace(R.id.contenido, cf).commit();
+        //fg.beginTransaction().replace(R.id.contenido, cf).commit();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         p= new Palabra("asd");
         setTitle("ASD Challenge");
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(

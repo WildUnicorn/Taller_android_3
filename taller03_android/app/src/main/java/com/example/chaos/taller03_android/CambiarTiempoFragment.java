@@ -31,7 +31,7 @@ public class CambiarTiempoFragment extends Fragment {
         lblTiempoActual = (TextView) view.findViewById(R.id.lblTiempoActual);
         Button btnCambiarTiempo = (Button) view.findViewById(R.id.btnCambiarTiempo);
 
-        lblTiempoActual.setText("Tiempo actual: " + d.getTiempo() + " segundos.");
+        lblTiempoActual.setText("Tiempo actual: " + d.getTiempo() / 1000 + " segundos.");
 
         btnCambiarTiempo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,7 +49,7 @@ public class CambiarTiempoFragment extends Fragment {
 
             AlertDialog.Builder confirmar = new AlertDialog.Builder(v.getContext());
             confirmar.setTitle("Confirmar");
-            confirmar.setMessage("¿Desea cambiar el tiempo a " + tiempo + " segundos?");
+            confirmar.setMessage("¿Desea cambiar el tiempo a " + tiempo+ " segundos?");
             confirmar.setCancelable(false);
             confirmar.setPositiveButton("Sí", new DialogInterface.OnClickListener() {
                 @Override
@@ -86,9 +86,11 @@ public class CambiarTiempoFragment extends Fragment {
     }
 
     public void aceptar(int tiempo) {
-        d.setTiempo(tiempo);
-        lblTiempoActual.setText("Tiempo actual: " + d.getTiempo() + " segundos.");
-        Toast.makeText(getView().getContext(), "Nuevo tiempo asginado: " + tiempo + " segundos.", Toast.LENGTH_LONG).show();
+        int time = tiempo * 1000;
+        d.tiempo = time;
+
+        lblTiempoActual.setText("Tiempo actual: " + time / 1000 + " segundos.");
+        Toast.makeText(getView().getContext(), "Nuevo tiempo asginado: " + time / 1000+ " segundos.", Toast.LENGTH_LONG).show();
         txtCambiarTiempo.setText("");
     }
 }

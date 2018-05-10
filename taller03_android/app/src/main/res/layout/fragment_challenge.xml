@@ -21,7 +21,6 @@
             android:contextClickable="false"
             android:ems="10"
             android:inputType="textPersonName"
-            android:maxLength="3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"

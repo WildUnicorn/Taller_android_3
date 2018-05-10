@@ -30,7 +30,7 @@ public class CambiarPalabraFragment extends Fragment {
         txtCambiarPalabra = (EditText) view.findViewById(R.id.txtCambiarPalabra);
         lblPalabraActual = (TextView) view.findViewById(R.id.lblPalabraActual);
         Button btnCambiarPalabra = (Button) view.findViewById(R.id.btnCambiarPalabra);
-        lblPalabraActual.setText("Palabra actual: " + d.getPalabra() + ".");
+        lblPalabraActual.setText("Palabra actual: " + d.frase + ".");
 
         btnCambiarPalabra.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,8 +81,9 @@ public class CambiarPalabraFragment extends Fragment {
 
     public void aceptar(Palabra p) {
         d.setPalabra(p);
-        lblPalabraActual.setText("Palabra actual: " + d.getPalabra() + ".");
-        Toast.makeText(getView().getContext(), "Nueva palabra asginada: " + p.getPalabra(), Toast.LENGTH_LONG).show();
+        d.frase=p.getPalabra();
+        lblPalabraActual.setText("Palabra actual: " + d.frase + ".");
+        Toast.makeText(getView().getContext(), "Nueva palabra asginada: " + d.frase, Toast.LENGTH_LONG).show();
         txtCambiarPalabra.setText("");
     }
 
