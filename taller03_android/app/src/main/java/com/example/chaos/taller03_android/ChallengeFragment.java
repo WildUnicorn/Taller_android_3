@@ -63,7 +63,6 @@ public class ChallengeFragment extends Fragment {
         btnReset.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                
             }
         } );
         cargarPalabra();
